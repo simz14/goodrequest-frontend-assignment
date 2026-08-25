@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "Styled components and i18next is working."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "sk": "Slovak"
+  }
+}
