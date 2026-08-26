@@ -1,10 +1,22 @@
 {
   "app": {
-    "title": "Styled components and i18next is working."
+    "title": "Styled components and i18next is working.",
+    "dogAlt": "Photo of a dog"
   },
   "language": {
     "label": "Language",
     "en": "English",
     "sk": "Slovak"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Jane Doe",
+    "email": "Email",
+    "submit": "Submit"
+  },
+  "validation": {
+    "required": "This field is required",
+    "minLength": "Too short",
+    "email": "Enter a valid email"
   }
 }

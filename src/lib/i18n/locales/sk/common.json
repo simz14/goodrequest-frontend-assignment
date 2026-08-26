@@ -1,10 +1,22 @@
 {
   "app": {
-    "title": "Styled components a i18next fungujú."
+    "title": "Styled components a i18next fungujú.",
+    "dogAlt": "Fotografia psa"
   },
   "language": {
     "label": "Jazyk",
     "en": "Angličtina",
     "sk": "Slovenčina"
+  },
+  "form": {
+    "name": "Meno",
+    "namePlaceholder": "Jane Doe",
+    "email": "E-mail",
+    "submit": "Odoslať"
+  },
+  "validation": {
+    "required": "Toto pole je povinné",
+    "minLength": "Príliš krátke",
+    "email": "Zadajte platný e-mail"
   }
 }
