@@ -8,15 +8,50 @@
     "en": "Angličtina",
     "sk": "Slovenčina"
   },
+  "steps": {
+    "chooseShelter": {
+      "label": "Prvý krok",
+      "description": "Vyberte útulok"
+    },
+    "personalInfo": {
+      "label": "Druhý krok",
+      "description": "Osobné údaje"
+    },
+    "summary": {
+      "label": "Posledný krok",
+      "description": "Zhrnutie"
+    }
+  },
+  "actions": {
+    "back": "Späť",
+    "next": "Ďalší krok",
+    "submit": "Odoslať"
+  },
   "form": {
     "name": "Meno",
-    "namePlaceholder": "Jane Doe",
-    "email": "E-mail",
+    "namePlaceholder": "Jana Nováková",
+    "donationType": "Typ daru",
+    "donationTypePlaceholder": "Vyberte, komu chcete prispieť",
+    "shelter": "Útulok",
+    "shelterPlaceholder": "Vyberte útulok",
+    "amount": "Suma",
+    "amountPlaceholder": "Zadajte sumu",
+    "firstName": "Meno",
+    "firstNamePlaceholder": "Zadajte Vaše meno",
+    "lastName": "Priezvisko",
+    "lastNamePlaceholder": "Zadajte Vaše priezvisko",
+    "email": "E-mailová adresa",
+    "emailPlaceholder": "Zadajte Váš email",
+    "phoneNumber": "Telefónne číslo",
+    "phoneNumberPlaceholder": "+421 900 000 000",
+    "consent": "Súhlasím so spracovaním mojich osobných údajov",
     "submit": "Odoslať"
   },
   "validation": {
     "required": "Toto pole je povinné",
     "minLength": "Príliš krátke",
-    "email": "Zadajte platný e-mail"
+    "maxLength": "Príliš dlhé",
+    "email": "Zadajte platný e-mail",
+    "number": "Zadajte platné číslo"
   }
 }

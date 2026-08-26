@@ -3,7 +3,7 @@ import { getT } from "next-i18next/server";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { languages } from "../../i18n.config";
 import { FormPanel, ImagePanel, Main } from "./page.styles";
-import { TestForm } from "@/components/test-form";
+import MultiStepForm from "@/components/multi-step-form";
 
 export default async function Home() {
   const { t } = await getT();
@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <Main>
       <FormPanel>
-        <TestForm />
+        <MultiStepForm />
         <LanguageSwitcher supportedLngs={languages} />
       </FormPanel>
 

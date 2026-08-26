@@ -8,15 +8,51 @@
     "en": "English",
     "sk": "Slovak"
   },
+  "steps": {
+    "chooseShelter": {
+      "label": "First step",
+      "description": "Choose a shelter"
+    },
+    "personalInfo": {
+      "label": "Second step",
+      "description": "Personal info"
+    },
+    "summary": {
+      "label": "Final step",
+      "description": "Summary"
+    }
+  },
+  "actions": {
+    "back": "Back",
+    "next": "Next step",
+    "submit": "Submit"
+  },
   "form": {
     "name": "Name",
     "namePlaceholder": "Jane Doe",
-    "email": "Email",
+    "donationType": "Donation type",
+    "donationTypePlaceholder": "Choose where to donate",
+    "shelter": "Shelter",
+    "shelterPlaceholder": "Choose a shelter",
+    "amount": "Amount",
+    "amountPlaceholder": "Enter an amount",
+    "firstName": "First name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "Enter your last name",
+    "email": "Email address",
+    "emailPlaceholder": "Enter your email",
+    "phoneNumber": "Phone number",
+    "phoneNumberPlaceholder": "+421 900 000 000",
+    "consent": "I agree to the processing of my personal data",
     "submit": "Submit"
   },
   "validation": {
     "required": "This field is required",
     "minLength": "Too short",
-    "email": "Enter a valid email"
+    "maxLength": "Too long",
+
+    "email": "Enter a valid email",
+    "number": "Enter a valid number"
   }
 }
