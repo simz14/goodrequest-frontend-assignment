@@ -1,18 +1,18 @@
 "use client";
 
-import { TextInput, type TextInputProps } from "@mantine/core";
+import { NumberInput, type NumberInputProps } from "@mantine/core";
 import { useT } from "next-i18next/client";
 import { useController, type FieldValues } from "react-hook-form";
 import type { ControlledFieldProps, ControlledProp } from "./types";
 
-export type FormTextInputProps<T extends FieldValues> =
-  ControlledFieldProps<T> & Omit<TextInputProps, ControlledProp>;
+export type FormNumberInputProps<T extends FieldValues> =
+  ControlledFieldProps<T> & Omit<NumberInputProps, ControlledProp>;
 
-export function FormTextInput<T extends FieldValues>({
+export function FormNumberInput<T extends FieldValues>({
   name,
   control,
   ...inputProps
-}: FormTextInputProps<T>) {
+}: FormNumberInputProps<T>) {
   const { t } = useT();
   const {
     field: { value, ...field },
@@ -22,7 +22,7 @@ export function FormTextInput<T extends FieldValues>({
   const message = fieldState.error?.message;
 
   return (
-    <TextInput
+    <NumberInput
       {...inputProps}
       {...field}
       value={value ?? ""}

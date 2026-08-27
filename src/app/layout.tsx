@@ -1,27 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { getResources, getT, initServerI18next } from "next-i18next/server";
 import { I18nProvider } from "next-i18next/client";
-import {
-  ColorSchemeScript,
-  MantineProvider,
-  mantineHtmlProps
-} from "@mantine/core";
+import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
-import { theme } from "@/lib/mantine/theme";
+import { ThemeProvider } from "@/lib/mantine/provider";
 import i18nConfig from "../../i18n.config";
 
 initServerI18next(i18nConfig);
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"]
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"]
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+  display: "swap"
 });
 
 export default async function RootLayout({
@@ -32,11 +24,7 @@ export default async function RootLayout({
   const resources = getResources(i18n);
 
   return (
-    <html
-      lang={lng}
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      {...mantineHtmlProps}
-    >
+    <html lang={lng} className={inter.variable} {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
       </head>
@@ -46,9 +34,9 @@ export default async function RootLayout({
           resources={resources}
           fallbackLng={i18nConfig.fallbackLng}
         >
-          <MantineProvider theme={theme}>
+          <ThemeProvider>
             <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </MantineProvider>
+          </ThemeProvider>
         </I18nProvider>
       </body>
     </html>

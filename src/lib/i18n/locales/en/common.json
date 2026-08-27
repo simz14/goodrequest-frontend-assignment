@@ -1,6 +1,5 @@
 {
   "app": {
-    "title": "Styled components and i18next is working.",
     "dogAlt": "Photo of a dog"
   },
   "language": {
@@ -10,16 +9,13 @@
   },
   "steps": {
     "chooseShelter": {
-      "label": "First step",
-      "description": "Choose a shelter"
+      "label": "Select shelter"
     },
     "personalInfo": {
-      "label": "Second step",
-      "description": "Personal info"
+      "label": "Personal details"
     },
     "summary": {
-      "label": "Final step",
-      "description": "Summary"
+      "label": "Confirmation"
     }
   },
   "actions": {
@@ -28,14 +24,13 @@
     "submit": "Submit"
   },
   "form": {
-    "name": "Name",
-    "namePlaceholder": "Jane Doe",
     "donationType": "Donation type",
-    "donationTypePlaceholder": "Choose where to donate",
+    "donationTypeShelterLabel": "Donate to a specific shelter",
+    "donationTypeFoundationLabel": "Donate to the whole foundation",
     "shelter": "Shelter",
     "shelterPlaceholder": "Choose a shelter",
     "amount": "Amount",
-    "amountPlaceholder": "Enter an amount",
+    "amountOptions": "Preset amounts",
     "firstName": "First name",
     "firstNamePlaceholder": "Enter your first name",
     "lastName": "Last name",
@@ -43,15 +38,13 @@
     "email": "Email address",
     "emailPlaceholder": "Enter your email",
     "phoneNumber": "Phone number",
-    "phoneNumberPlaceholder": "+421 900 000 000",
-    "consent": "I agree to the processing of my personal data",
-    "submit": "Submit"
+    "phoneNumberPlaceholder": "123321123",
+    "consent": "I agree to the processing of my personal data"
   },
   "validation": {
     "required": "This field is required",
     "minLength": "Too short",
     "maxLength": "Too long",
-
     "email": "Enter a valid email",
     "number": "Enter a valid number"
   }

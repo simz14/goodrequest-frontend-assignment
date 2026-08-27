@@ -29,7 +29,7 @@ export default function PersonalInfoStep() {
       <FormTextInput
         name="phoneNumber"
         label={t("form.phoneNumber")}
-        placeholder="123 321 123"
+        placeholder={t("form.phoneNumberPlaceholder")}
         withAsterisk
       />
     </div>

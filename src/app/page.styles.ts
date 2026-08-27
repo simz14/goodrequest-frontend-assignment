@@ -23,6 +23,9 @@ export const FormPanel = styled.section`
   justify-content: center;
   gap: 16px;
   min-width: 0;
+  max-width: 658px;
+  margin: 0 auto;
+  width: 100%;
 `;
 
 export const ImagePanel = styled.aside`
@@ -30,11 +33,4 @@ export const ImagePanel = styled.aside`
   overflow: hidden;
   min-height: 0;
   border-radius: var(--mantine-radius-lg, 16px);
-`;
-
-export const Text = styled.p`
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  color: crimson;
 `;

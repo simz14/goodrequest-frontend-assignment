@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { getT } from "next-i18next/server";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { languages } from "../../i18n.config";
 import { FormPanel, ImagePanel, Main } from "./page.styles";
 import MultiStepForm from "@/components/multi-step-form";
 
@@ -12,7 +10,7 @@ export default async function Home() {
     <Main>
       <FormPanel>
         <MultiStepForm />
-        <LanguageSwitcher supportedLngs={languages} />
+        {/* <LanguageSwitcher supportedLngs={languages} /> */}
       </FormPanel>
 
       <ImagePanel>

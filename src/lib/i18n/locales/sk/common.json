@@ -1,6 +1,5 @@
 {
   "app": {
-    "title": "Styled components a i18next fungujú.",
     "dogAlt": "Fotografia psa"
   },
   "language": {
@@ -10,16 +9,13 @@
   },
   "steps": {
     "chooseShelter": {
-      "label": "Prvý krok",
-      "description": "Vyberte útulok"
+      "label": "Výber útulku"
     },
     "personalInfo": {
-      "label": "Druhý krok",
-      "description": "Osobné údaje"
+      "label": "Osobné údaje"
     },
     "summary": {
-      "label": "Posledný krok",
-      "description": "Zhrnutie"
+      "label": "Potvrdenie"
     }
   },
   "actions": {
@@ -28,14 +24,13 @@
     "submit": "Odoslať"
   },
   "form": {
-    "name": "Meno",
-    "namePlaceholder": "Jana Nováková",
     "donationType": "Typ daru",
-    "donationTypePlaceholder": "Vyberte, komu chcete prispieť",
+    "donationTypeShelterLabel": "Prispieť konkrétnemu útulku",
+    "donationTypeFoundationLabel": "Prispieť celej nadácii",
     "shelter": "Útulok",
     "shelterPlaceholder": "Vyberte útulok",
     "amount": "Suma",
-    "amountPlaceholder": "Zadajte sumu",
+    "amountOptions": "Preddefinované sumy",
     "firstName": "Meno",
     "firstNamePlaceholder": "Zadajte Vaše meno",
     "lastName": "Priezvisko",
@@ -43,9 +38,8 @@
     "email": "E-mailová adresa",
     "emailPlaceholder": "Zadajte Váš email",
     "phoneNumber": "Telefónne číslo",
-    "phoneNumberPlaceholder": "+421 900 000 000",
-    "consent": "Súhlasím so spracovaním mojich osobných údajov",
-    "submit": "Odoslať"
+    "phoneNumberPlaceholder": "123321123",
+    "consent": "Súhlasím so spracovaním mojich osobných údajov"
   },
   "validation": {
     "required": "Toto pole je povinné",

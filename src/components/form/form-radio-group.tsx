@@ -1,18 +1,19 @@
 "use client";
 
-import { TextInput, type TextInputProps } from "@mantine/core";
+import { RadioGroup, type RadioGroupProps } from "@mantine/core";
 import { useT } from "next-i18next/client";
 import { useController, type FieldValues } from "react-hook-form";
 import type { ControlledFieldProps, ControlledProp } from "./types";
 
-export type FormTextInputProps<T extends FieldValues> =
-  ControlledFieldProps<T> & Omit<TextInputProps, ControlledProp>;
+export type FormRadioGroupProps<T extends FieldValues> =
+  ControlledFieldProps<T> & Omit<RadioGroupProps, ControlledProp>;
 
-export function FormTextInput<T extends FieldValues>({
+export function FormRadioGroup<T extends FieldValues>({
   name,
   control,
-  ...inputProps
-}: FormTextInputProps<T>) {
+  children,
+  ...props
+}: FormRadioGroupProps<T>) {
   const { t } = useT();
   const {
     field: { value, ...field },
@@ -22,11 +23,13 @@ export function FormTextInput<T extends FieldValues>({
   const message = fieldState.error?.message;
 
   return (
-    <TextInput
-      {...inputProps}
+    <RadioGroup
+      {...props}
       {...field}
       value={value ?? ""}
       error={message && t(message)}
-    />
+    >
+      {children}
+    </RadioGroup>
   );
 }

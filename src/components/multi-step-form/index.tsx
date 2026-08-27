@@ -2,13 +2,16 @@
 
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Stepper, Button, Group } from "@mantine/core";
+import { Stepper, Group } from "@mantine/core";
+import { IconArrowLeft, IconArrowRight, IconCheck } from "@tabler/icons-react";
 import { useState } from "react";
 import PersonalInfoStep from "./steps/personal-info";
 import SummaryStep from "./steps/summary";
 import ChooseShelterStep from "./steps/choose-shelter";
 import { formSchema, stepFields, type FormValues } from "./schema";
 import { useT } from "next-i18next/client";
+import { StyledActionButton, StyledStepper } from "./index.styles";
+import { DonationType } from "./types";
 
 const LAST_STEP = stepFields.length - 1;
 
@@ -20,7 +23,7 @@ export default function MultiStepForm() {
     mode: "onTouched",
     resolver: zodResolver(formSchema),
     defaultValues: {
-      donationType: undefined,
+      donationType: DonationType.FOUNDATION,
       amount: undefined,
       shelter: "",
       firstName: "",
@@ -47,35 +50,40 @@ export default function MultiStepForm() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Stepper active={active} onStepClick={setActive}>
-          <Stepper.Step label="First step" description="Choose a shelter">
+        <StyledStepper active={active} completedIcon={<IconCheck size={18} />}>
+          <Stepper.Step label={t("steps.chooseShelter.label")}>
             <ChooseShelterStep />
           </Stepper.Step>
-          <Stepper.Step label="Second step" description="Personal info">
+          <Stepper.Step label={t("steps.personalInfo.label")}>
             <PersonalInfoStep />
           </Stepper.Step>
-          <Stepper.Step label="Final step" description="Summary">
+          <Stepper.Step label={t("steps.summary.label")}>
             <SummaryStep />
           </Stepper.Step>
-        </Stepper>
-
-        <Group justify="center" mt="xl">
-          <Button
+        </StyledStepper>
+        <Group justify="space-between" mt="xl">
+          <StyledActionButton
             type="button"
             variant="default"
             onClick={prevStep}
             disabled={active === 0}
+            leftSection={<IconArrowLeft size={18} />}
           >
             {t("actions.back")}
-          </Button>
+          </StyledActionButton>
           {active === LAST_STEP ? (
-            <Button key="submit" type="submit">
+            <StyledActionButton key="submit" type="submit">
               {t("actions.submit")}
-            </Button>
+            </StyledActionButton>
           ) : (
-            <Button key="next" type="button" onClick={nextStep}>
+            <StyledActionButton
+              key="next"
+              type="button"
+              onClick={nextStep}
+              rightSection={<IconArrowRight size={18} />}
+            >
               {t("actions.next")}
-            </Button>
+            </StyledActionButton>
           )}
         </Group>
       </form>

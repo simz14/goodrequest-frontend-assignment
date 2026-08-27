@@ -2,26 +2,11 @@
 
 import { Checkbox, type CheckboxProps } from "@mantine/core";
 import { useT } from "next-i18next/client";
-import {
-  useController,
-  type Control,
-  type FieldPath,
-  type FieldValues
-} from "react-hook-form";
+import { useController, type FieldValues } from "react-hook-form";
+import type { ControlledFieldProps, ControlledProp } from "./types";
 
-export type FormCheckboxProps<T extends FieldValues> = {
-  name: FieldPath<T>;
-  control?: Control<T>;
-} & Omit<
-  CheckboxProps,
-  | "name"
-  | "value"
-  | "checked"
-  | "defaultValue"
-  | "onChange"
-  | "onBlur"
-  | "error"
->;
+export type FormCheckboxProps<T extends FieldValues> = ControlledFieldProps<T> &
+  Omit<CheckboxProps, ControlledProp | "checked">;
 
 export function FormCheckbox<T extends FieldValues>({
   name,
