@@ -2,30 +2,38 @@ import { FormTextInput } from "@/components/form";
 import { useT } from "next-i18next/client";
 import { StyledFullWidthField, StyledWrapper } from "./personal-info.styles";
 import { FormPhoneInput } from "@/components/form";
+import { StyledTypography } from "@/components/ui/typography.styles";
+import { StyledSection } from "../index.styles";
 
 export default function PersonalInfoStep() {
   const { t } = useT();
 
   return (
-    <StyledWrapper>
-      <FormTextInput
-        name="firstName"
-        label={t("form.firstName")}
-        placeholder={t("form.firstNamePlaceholder")}
-      />
-      <FormTextInput
-        name="lastName"
-        label={t("form.lastName")}
-        placeholder={t("form.lastNamePlaceholder")}
-      />
+    <StyledSection>
+      <StyledTypography $variant="heading-lg" $color="primary" as="h1">
+        {t("personalInfo.title")}
+      </StyledTypography>
 
-      <StyledFullWidthField
-        name="email"
-        label={t("form.email")}
-        placeholder={t("form.emailPlaceholder")}
-      />
+      <StyledWrapper>
+        <FormTextInput
+          name="firstName"
+          label={t("form.firstName")}
+          placeholder={t("form.firstNamePlaceholder")}
+        />
+        <FormTextInput
+          name="lastName"
+          label={t("form.lastName")}
+          placeholder={t("form.lastNamePlaceholder")}
+        />
 
-      <FormPhoneInput name="phoneNumber" />
-    </StyledWrapper>
+        <StyledFullWidthField
+          name="email"
+          label={t("form.email")}
+          placeholder={t("form.emailPlaceholder")}
+        />
+
+        <FormPhoneInput name="phoneNumber" />
+      </StyledWrapper>
+    </StyledSection>
   );
 }

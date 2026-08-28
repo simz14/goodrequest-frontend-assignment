@@ -21,7 +21,7 @@
   "actions": {
     "back": "Späť",
     "next": "Ďalší krok",
-    "submit": "Odoslať"
+    "submit": "Odoslať formulár"
   },
   "form": {
     "donationType": "Typ daru",
@@ -41,6 +41,28 @@
     "phoneNumberPlaceholder": "123321123",
     "phonePrefix": "Predvoľba krajiny",
     "consent": "Súhlasím so spracovaním mojich osobných údajov"
+  },
+  "chooseShelter": {
+    "title": "Vyberte si možnosť, ako chcete pomôcť"
+  },
+  "personalInfo": {
+    "title": "Potrebujeme od Vás zopár informácií"
+  },
+  "summary": {
+    "title": "Skontrolujte si zadané údaje",
+    "sectionTitle": "Zhrnutie",
+    "fields": {
+      "donationType": "Forma pomoci",
+      "shelter": "Útulok",
+      "amount": "Suma príspevku",
+      "fullName": "Meno a priezvisko",
+      "email": "E-mail",
+      "phoneNumber": "Telefónne číslo"
+    },
+    "donationTypes": {
+      "shelter": "Finančný príspevok konkrétnemu útulku",
+      "foundation": "Finančný príspevok celej nadácii"
+    }
   },
   "validation": {
     "required": "Toto pole je povinné",
