@@ -39,6 +39,7 @@
     "emailPlaceholder": "Zadajte Váš email",
     "phoneNumber": "Telefónne číslo",
     "phoneNumberPlaceholder": "123321123",
+    "phonePrefix": "Predvoľba krajiny",
     "consent": "Súhlasím so spracovaním mojich osobných údajov"
   },
   "validation": {
@@ -46,6 +47,7 @@
     "minLength": "Príliš krátke",
     "maxLength": "Príliš dlhé",
     "email": "Zadajte platný e-mail",
-    "number": "Zadajte platné číslo"
+    "number": "Zadajte platné číslo",
+    "phoneNumber": "Zadajte platné telefónne číslo"
   }
 }

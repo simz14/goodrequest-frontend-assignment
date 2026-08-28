@@ -32,7 +32,10 @@ export const personalInfoSchema = z.object({
     .min(2, "validation.minLength")
     .max(30, "validation.maxLength"),
   email: z.email("validation.email"),
-  phoneNumber: z.string().min(1, "validation.required")
+  phoneNumber: z
+    .string()
+    .min(1, "validation.required")
+    .regex(/^\+42[01]\d{9}$/, "validation.phoneNumber")
 });
 
 export const summarySchema = z.object({

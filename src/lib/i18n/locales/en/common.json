@@ -39,6 +39,7 @@
     "emailPlaceholder": "Enter your email",
     "phoneNumber": "Phone number",
     "phoneNumberPlaceholder": "123321123",
+    "phonePrefix": "Country calling code",
     "consent": "I agree to the processing of my personal data"
   },
   "validation": {
@@ -46,6 +47,7 @@
     "minLength": "Too short",
     "maxLength": "Too long",
     "email": "Enter a valid email",
-    "number": "Enter a valid number"
+    "number": "Enter a valid number",
+    "phoneNumber": "Enter a valid phone number"
   }
 }

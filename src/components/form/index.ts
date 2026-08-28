@@ -12,3 +12,4 @@ export {
   type FormChipGroupProps
 } from "./form-chip-group";
 export type { ControlledFieldProps, ControlledProp } from "./types";
+export { FormPhoneInput } from "./form-phone-input";
