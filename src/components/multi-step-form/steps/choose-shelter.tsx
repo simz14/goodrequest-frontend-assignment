@@ -4,6 +4,7 @@ import {
   FormRadioGroup,
   FormSelect
 } from "@/components/form";
+import { useQuery } from "@tanstack/react-query";
 import { useT } from "next-i18next/client";
 import { useMemo } from "react";
 import { DonationType } from "../types";
@@ -19,7 +20,7 @@ import {
   StyledSelectField
 } from "../index.styles";
 import { StyledTypography } from "@/components/ui/typography.styles";
-import { shelterOptions } from "../shelters";
+import { sheltersQueryOptions } from "@/lib/api/shelters";
 
 const donationTypes = [
   { value: DonationType.SHELTER, label: "form.donationTypeShelterLabel" },
@@ -30,6 +31,24 @@ const amounts = [5, 10, 20, 30, 50, 100];
 
 export default function ChooseShelterStep() {
   const { t, i18n } = useT();
+  const {
+    data: shelters,
+    isPending,
+    isError
+  } = useQuery(sheltersQueryOptions());
+
+  const shelterOptions = useMemo(
+    () =>
+      shelters?.map(({ id, name }) => ({ value: String(id), label: name })) ??
+      [],
+    [shelters]
+  );
+
+  const shelterPlaceholder = isPending
+    ? t("form.shelterLoading")
+    : isError
+      ? t("form.shelterError")
+      : t("form.shelterPlaceholder");
 
   const amountOptions = useMemo(() => {
     const formatter = new Intl.NumberFormat(i18n.resolvedLanguage, {
@@ -64,8 +83,10 @@ export default function ChooseShelterStep() {
           <FormSelect
             name="shelter"
             data={shelterOptions}
-            placeholder={t("form.shelterPlaceholder")}
+            placeholder={shelterPlaceholder}
             label={t("form.shelter")}
+            disabled={isPending || isError}
+            searchable
           />
         </StyledSelectField>
 

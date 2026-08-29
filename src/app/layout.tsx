@@ -7,6 +7,7 @@ import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
 import { ThemeProvider } from "@/lib/mantine/provider";
 import i18nConfig from "../../i18n.config";
+import QueryProvider from "@/lib/query/provider";
 
 initServerI18next(i18nConfig);
 
@@ -34,9 +35,11 @@ export default async function RootLayout({
           resources={resources}
           fallbackLng={i18nConfig.fallbackLng}
         >
-          <ThemeProvider>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </ThemeProvider>
+          <QueryProvider>
+            <ThemeProvider>
+              <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            </ThemeProvider>
+          </QueryProvider>
         </I18nProvider>
       </body>
     </html>

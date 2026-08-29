@@ -29,6 +29,8 @@
     "donationTypeFoundationLabel": "Donate to the whole foundation",
     "shelter": "Shelter",
     "shelterPlaceholder": "Choose a shelter",
+    "shelterLoading": "Loading shelters…",
+    "shelterError": "Could not load shelters",
     "amount": "Amount",
     "amountOptions": "Preset amounts",
     "firstName": "First name",

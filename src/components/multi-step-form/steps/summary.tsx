@@ -1,10 +1,11 @@
 import { FormCheckbox } from "@/components/form";
+import { useQuery } from "@tanstack/react-query";
 import { useT } from "next-i18next/client";
 import { useMemo } from "react";
 import { StyledTypography } from "@/components/ui/typography.styles";
 import { useFormContext, useWatch } from "react-hook-form";
 import { StyledSection } from "../index.styles";
-import { getShelterName } from "../shelters";
+import { sheltersQueryOptions } from "@/lib/api/shelters";
 import {
   StyledSummary,
   StyledSummaryGroup,
@@ -53,6 +54,10 @@ export default function SummaryStep() {
     phoneNumber
   } = useWatch({ control });
 
+  const { data: shelters } = useQuery(sheltersQueryOptions());
+
+  const shelterName = shelters?.find(({ id }) => String(id) === shelter)?.name;
+
   const formatAmount = useMemo(() => {
     const formatter = new Intl.NumberFormat(i18n.resolvedLanguage, {
       style: "currency",
@@ -80,12 +85,15 @@ export default function SummaryStep() {
         <StyledSummaryGroup>
           <SummaryRow
             label={t("summary.fields.donationType")}
-            value={donationType && t(`summary.donationTypes.${donationType}`)}
+            value={
+              donationType &&
+              t(`summary.donationTypes.${donationType.toLowerCase()}`)
+            }
           />
           {donationType === DonationType.SHELTER && (
             <SummaryRow
               label={t("summary.fields.shelter")}
-              value={getShelterName(shelter)}
+              value={shelterName}
             />
           )}
           <SummaryRow

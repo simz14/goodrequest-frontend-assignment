@@ -29,6 +29,8 @@
     "donationTypeFoundationLabel": "Prispieť celej nadácii",
     "shelter": "Útulok",
     "shelterPlaceholder": "Vyberte útulok",
+    "shelterLoading": "Načítavame útulky…",
+    "shelterError": "Útulky sa nepodarilo načítať",
     "amount": "Suma",
     "amountOptions": "Preddefinované sumy",
     "firstName": "Meno",
