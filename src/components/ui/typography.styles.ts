@@ -13,10 +13,20 @@ const TYPOGRAPHY_VARIANTS = {
     lineHeight: "56px",
     fontWeight: 700
   },
+  "text-xl-semibold": {
+    fontSize: "20px",
+    lineHeight: "32px",
+    fontWeight: 600
+  },
   "text-md": {
     fontSize: "16px",
     lineHeight: "24px",
     fontWeight: 400
+  },
+  "text-md-medium": {
+    fontSize: "16px",
+    lineHeight: "24px",
+    fontWeight: 500
   },
   "text-md-semibold": {
     fontSize: "16px",

@@ -91,5 +91,25 @@
       "contributors": "Počet darcov",
       "error": "Aktuálne výsledky sa nepodarilo načítať"
     }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Náš tím Vám rád pomôže.",
+        "value": "hello@goodrequest.com"
+      },
+      "office": {
+        "title": "Kancelária",
+        "description": "Zastavte sa u nás v kancelárii.",
+        "value": "Obchodná 3D, 010 08 Žilina, Slovensko"
+      },
+      "phone": {
+        "title": "Telefón",
+        "description": "Po-Pia od 8:00 do 17:00.",
+        "value": "+421 911 750 750"
+      }
+    }
   }
 }

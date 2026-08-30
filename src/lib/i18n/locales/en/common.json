@@ -91,5 +91,25 @@
       "contributors": "Number of donors",
       "error": "We could not load the current results"
     }
+  },
+  "contact": {
+    "title": "Contact",
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Our friendly team is here to help.",
+        "value": "hello@goodrequest.com"
+      },
+      "office": {
+        "title": "Office",
+        "description": "Come say hello at our office HQ.",
+        "value": "Obchodná 3D, 010 08 Žilina, Slovakia"
+      },
+      "phone": {
+        "title": "Phone",
+        "description": "Mon-Fri from 8am to 5pm.",
+        "value": "+421 911 750 750"
+      }
+    }
   }
 }
