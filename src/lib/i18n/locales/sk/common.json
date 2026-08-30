@@ -66,6 +66,22 @@
       "foundation": "Finančný príspevok celej nadácii"
     }
   },
+  "submit": {
+    "success": {
+      "title": "Ďakujeme za Váš príspevok!",
+      "toast": "Príspevok odoslaný",
+      "description": "Váš príspevok sme zaznamenali. Vďaka Vám sú psíky v núdzi o kúsok bližšie k lepšiemu životu.",
+      "restart": "Odoslať ďalší príspevok"
+    },
+    "error": {
+      "title": "Formulár sa nepodarilo odoslať",
+      "description": "Niečo sa pokazilo na našej strane. Skontrolujte prosím zadané údaje a skúste to znova."
+    }
+  },
+  "notifications": {
+    "label": "Notifikácie",
+    "dismiss": "Zavrieť notifikáciu"
+  },
   "validation": {
     "required": "Toto pole je povinné",
     "minLength": "Príliš krátke",

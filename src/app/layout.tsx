@@ -3,12 +3,14 @@ import { getResources, getT, initServerI18next } from "next-i18next/server";
 import { I18nProvider } from "next-i18next/client";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
 import { ThemeProvider } from "@/lib/mantine/provider";
 import i18nConfig from "../../i18n.config";
 import QueryProvider from "@/lib/query/provider";
 import { PageContent } from "./layout.styles";
+import Notifications from "@/components/notifications";
 
 initServerI18next(i18nConfig);
 
@@ -40,6 +42,7 @@ export default async function RootLayout({
             <ThemeProvider>
               <StyledComponentsRegistry>
                 <PageContent>{children}</PageContent>
+                <Notifications />
               </StyledComponentsRegistry>
             </ThemeProvider>
           </QueryProvider>

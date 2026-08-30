@@ -66,6 +66,22 @@
       "foundation": "Financial contribution to the whole foundation"
     }
   },
+  "submit": {
+    "success": {
+      "title": "Thank you for your contribution!",
+      "toast": "Contribution sent",
+      "description": "We have recorded your contribution. Thanks to you, dogs in need get a little closer to a better life.",
+      "restart": "Send another contribution"
+    },
+    "error": {
+      "title": "The form could not be submitted",
+      "description": "Something went wrong on our side. Please check your details and try again."
+    }
+  },
+  "notifications": {
+    "label": "Notifications",
+    "dismiss": "Dismiss notification"
+  },
   "validation": {
     "required": "This field is required",
     "minLength": "Too short",

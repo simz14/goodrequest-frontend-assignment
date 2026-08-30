@@ -14,17 +14,7 @@ import {
 } from "./summary.styles";
 import type { FormValues } from "../schema";
 import { DonationType } from "../types";
-
-const formatPhoneNumber = (phoneNumber: string) => {
-  if (phoneNumber.length !== 13) return phoneNumber;
-
-  const prefix = phoneNumber.slice(0, 4);
-  const a = phoneNumber.slice(4, 7);
-  const b = phoneNumber.slice(7, 10);
-  const c = phoneNumber.slice(10);
-
-  return `${prefix} ${a} ${b} ${c}`;
-};
+import { formatPhoneNumber } from "@/lib/format/phone";
 
 function SummaryRow({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
