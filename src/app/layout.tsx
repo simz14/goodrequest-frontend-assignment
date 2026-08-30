@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getResources, getT, initServerI18next } from "next-i18next/server";
 import { I18nProvider } from "next-i18next/client";
@@ -11,8 +12,22 @@ import i18nConfig from "../../i18n.config";
 import QueryProvider from "@/lib/query/provider";
 import { PageContent } from "./layout.styles";
 import Notifications from "@/components/notifications";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 initServerI18next(i18nConfig);
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { t, lng } = await getT();
+
+  return buildPageMetadata({
+    title: t("seo.home.title"),
+    description: t("seo.home.description"),
+    siteName: t("seo.siteName"),
+    imageAlt: t("seo.imageAlt"),
+    language: lng,
+    path: "/"
+  });
+}
 
 const inter = Inter({
   variable: "--font-inter",

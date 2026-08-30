@@ -1,5 +1,7 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getT } from "next-i18next/server";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Footer from "@/components/footer";
 import BackLink from "@/components/back-link";
 import ContactMethods from "@/components/contact-methods";
@@ -14,6 +16,19 @@ import {
 } from "./page.styles";
 
 const IMAGE_MAX_WIDTH = 960;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { t, lng } = await getT();
+
+  return buildPageMetadata({
+    title: t("seo.contact.title"),
+    description: t("seo.contact.description"),
+    siteName: t("seo.siteName"),
+    imageAlt: t("seo.imageAlt"),
+    language: lng,
+    path: "/contact"
+  });
+}
 
 export default async function Contact() {
   const { t } = await getT();

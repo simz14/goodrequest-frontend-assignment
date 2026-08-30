@@ -2,6 +2,40 @@
   "app": {
     "dogAlt": "Fotografia psa"
   },
+  "seo": {
+    "siteName": "Good Boy",
+    "imageAlt": "Pes z útulku podporovaného nadáciou Good Boy",
+    "home": {
+      "title": "Prispejte psíkom v núdzi",
+      "description": "Podporte nadáciu Good Boy alebo konkrétny slovenský útulok. Vyplňte krátky formulár a pomôžte psíkom v núdzi k lepšiemu životu."
+    },
+    "about": {
+      "title": "O projekte",
+      "description": "Nadácia Good Boy zachraňuje opustené a týrané psy v Žiline. Pozrite si, koľko sme spoločne vyzbierali a koľko darcov nás podporilo."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Ozvite sa nadácii Good Boy – e-mailom, telefonicky alebo osobne v našej kancelárii v Žiline."
+    },
+    "steps": {
+      "chooseShelter": {
+        "title": "Výber formy pomoci",
+        "description": "Vyberte si, či chcete prispieť celej nadácii alebo konkrétnemu útulku, a zvoľte výšku svojho príspevku."
+      },
+      "personalInfo": {
+        "title": "Osobné údaje",
+        "description": "Zadajte svoje kontaktné údaje, aby sme vedeli, komu za príspevok poďakovať."
+      },
+      "summary": {
+        "title": "Kontrola údajov",
+        "description": "Skontrolujte si zadané údaje a potvrďte odoslanie svojho príspevku."
+      },
+      "success": {
+        "title": "Ďakujeme za príspevok",
+        "description": "Váš príspevok sme zaznamenali. Vďaka Vám sú psíky v núdzi o kúsok bližšie k lepšiemu životu."
+      }
+    }
+  },
   "language": {
     "label": "Jazyk",
     "en": "Angličtina",

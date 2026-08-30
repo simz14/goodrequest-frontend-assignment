@@ -2,6 +2,40 @@
   "app": {
     "dogAlt": "Photo of a dog"
   },
+  "seo": {
+    "siteName": "Good Boy",
+    "imageAlt": "A dog from a shelter supported by the Good Boy Foundation",
+    "home": {
+      "title": "Contribute to dogs in need",
+      "description": "Support the Good Boy Foundation or a specific Slovak shelter. Fill in a short form and help dogs in need to a better life."
+    },
+    "about": {
+      "title": "About the project",
+      "description": "The Good Boy Foundation rescues abandoned and abused dogs in Žilina. See how much we have raised together and how many donors have supported us."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with the Good Boy Foundation – by e-mail, by phone or in person at our office in Žilina."
+    },
+    "steps": {
+      "chooseShelter": {
+        "title": "Choose how to help",
+        "description": "Choose whether to contribute to the whole foundation or to a specific shelter, and set the amount of your contribution."
+      },
+      "personalInfo": {
+        "title": "Personal details",
+        "description": "Enter your contact details so we know who to thank for the contribution."
+      },
+      "summary": {
+        "title": "Check your details",
+        "description": "Review the details you entered and confirm the submission of your contribution."
+      },
+      "success": {
+        "title": "Thank you for your contribution",
+        "description": "We have recorded your contribution. Thanks to you, dogs in need get a little closer to a better life."
+      }
+    }
+  },
   "language": {
     "label": "Language",
     "en": "English",

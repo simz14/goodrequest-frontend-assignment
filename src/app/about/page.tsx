@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getT } from "next-i18next/server";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import Footer from "@/components/footer";
 import BackLink from "@/components/back-link";
 import AboutResults from "@/components/about-results";
@@ -9,6 +11,19 @@ import {
   AboutHeader,
   AboutMain
 } from "./page.styles";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { t, lng } = await getT();
+
+  return buildPageMetadata({
+    title: t("seo.about.title"),
+    description: t("seo.about.description"),
+    siteName: t("seo.siteName"),
+    imageAlt: t("seo.imageAlt"),
+    language: lng,
+    path: "/about"
+  });
+}
 
 export default async function About() {
   const { t } = await getT();
