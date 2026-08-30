@@ -73,5 +73,16 @@
     "email": "Enter a valid email",
     "number": "Enter a valid number",
     "phoneNumber": "Enter a valid phone number"
+  },
+  "footer": {
+    "logoAlt": "Good boy logo",
+    "navLabel": "Footer",
+    "links": {
+      "contact": "Contact",
+      "about": "About the project"
+    }
+  },
+  "about": {
+    "title": "About the project"
   }
 }

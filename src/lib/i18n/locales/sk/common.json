@@ -73,5 +73,16 @@
     "email": "Zadajte platný e-mail",
     "number": "Zadajte platné číslo",
     "phoneNumber": "Zadajte platné telefónne číslo"
+  },
+  "footer": {
+    "logoAlt": "Good boy logo",
+    "navLabel": "Pätička",
+    "links": {
+      "contact": "Kontakt",
+      "about": "O projekte"
+    }
+  },
+  "about": {
+    "title": "O projekte"
   }
 }

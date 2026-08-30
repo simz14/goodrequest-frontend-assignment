@@ -8,6 +8,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { ThemeProvider } from "@/lib/mantine/provider";
 import i18nConfig from "../../i18n.config";
 import QueryProvider from "@/lib/query/provider";
+import { PageContent } from "./layout.styles";
 
 initServerI18next(i18nConfig);
 
@@ -37,7 +38,9 @@ export default async function RootLayout({
         >
           <QueryProvider>
             <ThemeProvider>
-              <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+              <StyledComponentsRegistry>
+                <PageContent>{children}</PageContent>
+              </StyledComponentsRegistry>
             </ThemeProvider>
           </QueryProvider>
         </I18nProvider>
