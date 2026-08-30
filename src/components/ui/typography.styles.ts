@@ -3,6 +3,11 @@
 import styled, { css } from "styled-components";
 
 const TYPOGRAPHY_VARIANTS = {
+  "heading-xl": {
+    fontSize: "60px",
+    lineHeight: "68px",
+    fontWeight: 700
+  },
   "heading-lg": {
     fontSize: "48px",
     lineHeight: "56px",
@@ -24,7 +29,8 @@ type TypographyVariant = keyof typeof TYPOGRAPHY_VARIANTS;
 
 const TYPOGRAPHY_COLORS = {
   primary: "var(--app-content-primary)",
-  secondary: "var(--app-content-secondary)"
+  secondary: "var(--app-content-secondary)",
+  brand: "var(--app-action-primary)"
 };
 
 type TypographyColor = keyof typeof TYPOGRAPHY_COLORS;
