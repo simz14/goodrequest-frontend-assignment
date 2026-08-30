@@ -7,7 +7,7 @@ import { useContribution } from "./contribution-context";
 import ContributionSuccess from "./contribution-success";
 import { StyledActionButton, StyledStepper } from "./index.styles";
 import { steps } from "./steps";
-import { useDocumentMetadata } from "@/lib/seo/use-document-metadata";
+import { useStepMetadata } from "@/lib/seo/use-step-metadata";
 
 export default function ContributionForm() {
   const { t } = useT();
@@ -25,9 +25,9 @@ export default function ContributionForm() {
 
   const stepKey = isSubmitted ? "success" : steps[activeStep].id;
 
-  useDocumentMetadata({
-    title: t(`seo.steps.${stepKey}.title`),
-    description: t(`seo.steps.${stepKey}.description`)
+  useStepMetadata({
+    step: stepKey,
+    title: t(`seo.steps.${stepKey}.title`)
   });
 
   if (isSubmitted) return <ContributionSuccess />;

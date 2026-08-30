@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import type { SeoStepKey } from "@/lib/seo/steps";
 import {
   chooseShelterSchema,
   personalInfoSchema,
@@ -10,7 +11,7 @@ import PersonalInfoStep from "./personal-info";
 import SummaryStep from "./summary";
 
 export type Step = {
-  id: string;
+  id: Exclude<SeoStepKey, "success">;
   labelKey: string;
   fields: (keyof FormValues)[];
   Component: ComponentType;
