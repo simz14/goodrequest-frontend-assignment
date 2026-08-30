@@ -7,14 +7,18 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { useT } from "next-i18next/client";
 import { useMemo } from "react";
+import { useFormContext, useWatch } from "react-hook-form";
+import type { FormValues } from "../schema";
 import { DonationType } from "../types";
 import {
   StyledAmountBlock,
   StyledAmountField,
   StyledAmountOptions,
   StyledCurrency,
+  StyledFieldGroup,
   StyledFormSection,
   StyledGroup,
+  StyledOptionalLabel,
   StyledRadioCard,
   StyledSection,
   StyledSelectField
@@ -31,6 +35,8 @@ const amounts = [5, 10, 20, 30, 50, 100];
 
 export default function ChooseShelterStep() {
   const { t, i18n } = useT();
+  const { control } = useFormContext<FormValues>();
+  const donationType = useWatch({ control, name: "donationType" });
   const {
     data: shelters,
     isPending,
@@ -50,6 +56,15 @@ export default function ChooseShelterStep() {
       ? t("form.shelterError")
       : t("form.shelterPlaceholder");
 
+  const shelterLabel = (
+    <>
+      {t("form.shelter")}
+      {donationType !== DonationType.SHELTER && (
+        <StyledOptionalLabel>{t("form.optional")}</StyledOptionalLabel>
+      )}
+    </>
+  );
+
   const amountOptions = useMemo(() => {
     const formatter = new Intl.NumberFormat(i18n.resolvedLanguage, {
       style: "currency",
@@ -68,29 +83,44 @@ export default function ChooseShelterStep() {
       <StyledFormSection>
         <FormRadioGroup name="donationType" aria-label={t("form.donationType")}>
           <StyledGroup>
-            {donationTypes.map((donationType) => (
-              <StyledRadioCard
-                key={donationType.value}
-                value={donationType.value}
-              >
-                {t(donationType.label)}
+            {donationTypes.map((option) => (
+              <StyledRadioCard key={option.value} value={option.value}>
+                {t(option.label)}
               </StyledRadioCard>
             ))}
           </StyledGroup>
         </FormRadioGroup>
 
-        <StyledSelectField>
-          <FormSelect
-            name="shelter"
-            data={shelterOptions}
-            placeholder={shelterPlaceholder}
-            label={t("form.shelter")}
-            disabled={isPending || isError}
-            searchable
-          />
-        </StyledSelectField>
+        <StyledFieldGroup>
+          <StyledTypography
+            $variant="text-md-semibold"
+            $color="primary"
+            as="h2"
+          >
+            {t("form.sectionProject")}
+          </StyledTypography>
+
+          <StyledSelectField>
+            <FormSelect
+              name="shelter"
+              data={shelterOptions}
+              placeholder={shelterPlaceholder}
+              label={shelterLabel}
+              disabled={isPending || isError}
+              searchable
+            />
+          </StyledSelectField>
+        </StyledFieldGroup>
 
         <StyledAmountBlock>
+          <StyledTypography
+            $variant="text-md-semibold"
+            $color="primary"
+            as="h2"
+          >
+            {t("form.sectionAmount")}
+          </StyledTypography>
+
           <StyledAmountField>
             <FormNumberInput
               name="amount"

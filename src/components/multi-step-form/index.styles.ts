@@ -289,3 +289,16 @@ export const StyledSection = styled.div`
   width: 100%;
   gap: 40px;
 `;
+
+export const StyledFieldGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+`;
+
+export const StyledOptionalLabel = styled.span`
+  margin-inline-start: 4px;
+  font-weight: 400;
+  color: var(--app-content-quaternary);
+`;

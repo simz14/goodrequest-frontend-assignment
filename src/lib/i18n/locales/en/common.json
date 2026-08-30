@@ -20,15 +20,19 @@
   },
   "actions": {
     "back": "Back",
-    "next": "Next step",
+    "next": "Continue",
     "submit": "Submit the form"
   },
   "form": {
+    "sectionProject": "About the project",
+    "sectionAmount": "The amount I want to contribute",
+    "sectionAboutYou": "About you",
+    "optional": "(Optional)",
     "donationType": "Donation type",
     "donationTypeShelterLabel": "Donate to a specific shelter",
     "donationTypeFoundationLabel": "Donate to the whole foundation",
     "shelter": "Shelter",
-    "shelterPlaceholder": "Choose a shelter",
+    "shelterPlaceholder": "Choose a shelter from the list",
     "shelterLoading": "Loading shelters…",
     "shelterError": "Could not load shelters",
     "amount": "Amount",
@@ -38,20 +42,20 @@
     "lastName": "Last name",
     "lastNamePlaceholder": "Enter your last name",
     "email": "Email address",
-    "emailPlaceholder": "Enter your email",
+    "emailPlaceholder": "Enter your e-mail",
     "phoneNumber": "Phone number",
-    "phoneNumberPlaceholder": "123321123",
+    "phoneNumberPlaceholder": "123 321 123",
     "phonePrefix": "Country calling code",
     "consent": "I agree to the processing of my personal data"
   },
   "chooseShelter": {
-    "title": "Choose how you would like to help."
+    "title": "Choose how you would like to help"
   },
   "personalInfo": {
-    "title": "We need a few pieces of information from you."
+    "title": "We need a few pieces of information from you"
   },
   "summary": {
-    "title": "Check the entered details.",
+    "title": "Check the entered details",
     "sectionTitle": "Summary",
     "fields": {
       "donationType": "Form of help",

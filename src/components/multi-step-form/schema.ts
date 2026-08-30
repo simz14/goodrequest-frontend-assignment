@@ -51,9 +51,3 @@ export const formSchema = z
   .superRefine(shelterRefinement);
 
 export type FormValues = z.infer<typeof formSchema>;
-
-export const stepFields = [
-  chooseShelterSchema,
-  personalInfoSchema,
-  summarySchema
-].map((schema) => Object.keys(schema.shape) as (keyof FormValues)[]);

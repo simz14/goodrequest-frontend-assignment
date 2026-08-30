@@ -1,7 +1,5 @@
 import type { I18nConfig } from "next-i18next/proxy";
-
-export const languages = ["en", "sk"] as const;
-export type Language = (typeof languages)[number];
+import { languages } from "./src/lib/i18n/languages";
 
 const resourceLoader: I18nConfig["resourceLoader"] =
   process.env.NODE_ENV === "development"

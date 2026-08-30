@@ -1,10 +1,8 @@
 import type { ContributePayload } from "@/lib/api/contribute";
 import { formatPhoneNumber } from "@/lib/format/phone";
 import type { FormValues } from "./schema";
-import { DonationType } from "./types";
 
 export const toContributePayload = ({
-  donationType,
   shelter,
   amount,
   firstName,
@@ -20,7 +18,6 @@ export const toContributePayload = ({
       phone: formatPhoneNumber(phoneNumber)
     }
   ],
-  ...(donationType === DonationType.SHELTER &&
-    shelter && { shelterID: Number(shelter) }),
+  ...(shelter && { shelterID: Number(shelter) }),
   value: amount
 });

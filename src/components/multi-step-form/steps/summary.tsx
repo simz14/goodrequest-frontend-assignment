@@ -13,7 +13,6 @@ import {
   StyledSummaryValue
 } from "./summary.styles";
 import type { FormValues } from "../schema";
-import { DonationType } from "../types";
 import { formatPhoneNumber } from "@/lib/format/phone";
 
 function SummaryRow({ label, value }: { label: string; value?: string }) {
@@ -80,12 +79,7 @@ export default function SummaryStep() {
               t(`summary.donationTypes.${donationType.toLowerCase()}`)
             }
           />
-          {donationType === DonationType.SHELTER && (
-            <SummaryRow
-              label={t("summary.fields.shelter")}
-              value={shelterName}
-            />
-          )}
+          <SummaryRow label={t("summary.fields.shelter")} value={shelterName} />
           <SummaryRow
             label={t("summary.fields.amount")}
             value={

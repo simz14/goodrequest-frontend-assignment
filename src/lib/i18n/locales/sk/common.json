@@ -20,15 +20,19 @@
   },
   "actions": {
     "back": "Späť",
-    "next": "Ďalší krok",
+    "next": "Pokračovať",
     "submit": "Odoslať formulár"
   },
   "form": {
+    "sectionProject": "O projekte",
+    "sectionAmount": "Suma, ktorou chcem prispieť",
+    "sectionAboutYou": "O vás",
+    "optional": "(Nepovinné)",
     "donationType": "Typ daru",
     "donationTypeShelterLabel": "Prispieť konkrétnemu útulku",
     "donationTypeFoundationLabel": "Prispieť celej nadácii",
     "shelter": "Útulok",
-    "shelterPlaceholder": "Vyberte útulok",
+    "shelterPlaceholder": "Vyberte útulok zo zoznamu",
     "shelterLoading": "Načítavame útulky…",
     "shelterError": "Útulky sa nepodarilo načítať",
     "amount": "Suma",
@@ -38,9 +42,9 @@
     "lastName": "Priezvisko",
     "lastNamePlaceholder": "Zadajte Vaše priezvisko",
     "email": "E-mailová adresa",
-    "emailPlaceholder": "Zadajte Váš email",
+    "emailPlaceholder": "Zadajte Váš e-mail",
     "phoneNumber": "Telefónne číslo",
-    "phoneNumberPlaceholder": "123321123",
+    "phoneNumberPlaceholder": "123 321 123",
     "phonePrefix": "Predvoľba krajiny",
     "consent": "Súhlasím so spracovaním mojich osobných údajov"
   },

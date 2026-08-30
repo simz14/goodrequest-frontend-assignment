@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useT } from "next-i18next/client";
+import LanguageSwitcher from "@/components/language-switcher";
 import {
   StyledFooter,
+  StyledFooterActions,
   StyledLogoLink,
   StyledNav,
   StyledNavLink
@@ -31,13 +33,17 @@ export default function Footer() {
         />
       </StyledLogoLink>
 
-      <StyledNav aria-label={t("footer.navLabel")}>
-        {NAV_LINKS.map(({ key, href }) => (
-          <StyledNavLink key={key} href={href}>
-            {t(`footer.links.${key}`)}
-          </StyledNavLink>
-        ))}
-      </StyledNav>
+      <StyledFooterActions>
+        <StyledNav aria-label={t("footer.navLabel")}>
+          {NAV_LINKS.map(({ key, href }) => (
+            <StyledNavLink key={key} href={href}>
+              {t(`footer.links.${key}`)}
+            </StyledNavLink>
+          ))}
+        </StyledNav>
+
+        <LanguageSwitcher />
+      </StyledFooterActions>
     </StyledFooter>
   );
 }

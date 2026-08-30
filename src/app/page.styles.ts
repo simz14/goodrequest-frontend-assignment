@@ -14,7 +14,7 @@ export const Main = styled.main`
   gap: 24px;
   flex: 1;
   min-height: 0;
-  padding-block: 24px;
+  padding-block: 20px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

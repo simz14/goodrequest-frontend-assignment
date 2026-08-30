@@ -1,0 +1,70 @@
+"use client";
+
+import { Group, Stepper } from "@mantine/core";
+import { IconArrowLeft, IconArrowRight, IconCheck } from "@tabler/icons-react";
+import { useT } from "next-i18next/client";
+import { useContribution } from "./contribution-context";
+import ContributionSuccess from "./contribution-success";
+import { StyledActionButton, StyledStepper } from "./index.styles";
+import { steps } from "./steps";
+
+export default function ContributionForm() {
+  const { t } = useT();
+  const {
+    activeStep,
+    isFirstStep,
+    isLastStep,
+    isSubmitting,
+    isSubmitted,
+    goToNextStep,
+    goToPreviousStep,
+    goToStep,
+    submit
+  } = useContribution();
+
+  if (isSubmitted) return <ContributionSuccess />;
+
+  return (
+    <form onSubmit={submit}>
+      <StyledStepper
+        active={activeStep}
+        onStepClick={goToStep}
+        allowNextStepsSelect={false}
+        completedIcon={<IconCheck size={18} />}
+      >
+        {steps.map(({ id, labelKey, Component }) => (
+          <Stepper.Step key={id} label={t(labelKey)}>
+            <Component />
+          </Stepper.Step>
+        ))}
+      </StyledStepper>
+
+      <Group justify="space-between" mt="xl">
+        <StyledActionButton
+          type="button"
+          variant="default"
+          onClick={goToPreviousStep}
+          disabled={isFirstStep || isSubmitting}
+          leftSection={<IconArrowLeft size={18} />}
+        >
+          {t("actions.back")}
+        </StyledActionButton>
+
+        {isLastStep ? (
+          <StyledActionButton key="submit" type="submit" loading={isSubmitting}>
+            {t("actions.submit")}
+          </StyledActionButton>
+        ) : (
+          <StyledActionButton
+            key="next"
+            type="button"
+            onClick={goToNextStep}
+            rightSection={<IconArrowRight size={18} />}
+          >
+            {t("actions.next")}
+          </StyledActionButton>
+        )}
+      </Group>
+    </form>
+  );
+}

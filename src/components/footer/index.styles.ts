@@ -21,6 +21,17 @@ export const StyledLogoLink = styled(Link)`
   display: inline-flex;
 `;
 
+export const StyledFooterActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+`;
+
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
