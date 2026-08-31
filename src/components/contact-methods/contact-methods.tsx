@@ -9,7 +9,7 @@ import {
   StyledContactMethod,
   StyledContactMethods,
   StyledContactTitle
-} from "./index.styles";
+} from "./contact-methods.styles";
 
 const ICON_SIZE = 24;
 

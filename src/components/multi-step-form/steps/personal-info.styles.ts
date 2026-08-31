@@ -1,6 +1,7 @@
 "use client";
 
 import { FormTextInput } from "@/components/form";
+import { filledInputSkin } from "@/components/form/form-field.styles";
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
@@ -15,15 +16,7 @@ export const StyledWrapper = styled.div`
   }
 
   .mantine-Input-input {
-    background-color: var(--app-surface-tertiary);
-    color: var(--app-content-primary);
-    border: none;
-    padding: 16px;
-    height: auto;
-    min-height: 0;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    ${filledInputSkin}
   }
 `;
 

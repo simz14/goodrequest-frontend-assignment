@@ -1,7 +1,7 @@
 "use client";
 
 import { useT } from "next-i18next/client";
-import { StyledNotifications } from "./index.styles";
+import { StyledNotifications } from "./notifications.styles";
 
 export default function Notifications() {
   const { t } = useT();

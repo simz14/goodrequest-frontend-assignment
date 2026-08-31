@@ -9,7 +9,7 @@ import {
   StyledLogoLink,
   StyledNav,
   StyledNavLink
-} from "./index.styles";
+} from "./footer.styles";
 
 const LOGO_HEIGHT = 24;
 const LOGO_ASPECT_RATIO = 217 / 56;

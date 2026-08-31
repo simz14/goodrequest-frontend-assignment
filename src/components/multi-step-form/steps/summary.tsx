@@ -4,7 +4,7 @@ import { useT } from "next-i18next/client";
 import { useMemo } from "react";
 import { StyledTypography } from "@/components/ui/typography.styles";
 import { useFormContext, useWatch } from "react-hook-form";
-import { StyledSection } from "../index.styles";
+import { StyledSection } from "../shared.styles";
 import { sheltersQueryOptions } from "@/lib/api/shelters";
 import {
   StyledSummary,

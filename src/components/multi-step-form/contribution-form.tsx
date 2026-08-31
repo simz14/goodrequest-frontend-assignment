@@ -4,8 +4,9 @@ import { Group, Stepper } from "@mantine/core";
 import { IconArrowLeft, IconArrowRight, IconCheck } from "@tabler/icons-react";
 import { useT } from "next-i18next/client";
 import { useContribution } from "./contribution-context";
+import { StyledStepper } from "./contribution-form.styles";
 import ContributionSuccess from "./contribution-success";
-import { StyledActionButton, StyledStepper } from "./index.styles";
+import { StyledActionButton } from "./shared.styles";
 import { steps } from "./steps";
 import { useStepMetadata } from "@/lib/seo/use-step-metadata";
 

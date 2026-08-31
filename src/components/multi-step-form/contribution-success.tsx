@@ -8,7 +8,7 @@ import {
   StyledSuccess,
   StyledSuccessIcon
 } from "./contribution-success.styles";
-import { StyledActionButton } from "./index.styles";
+import { StyledActionButton } from "./shared.styles";
 
 export default function ContributionSuccess() {
   const { t } = useT();

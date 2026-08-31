@@ -3,7 +3,7 @@ import { useT } from "next-i18next/client";
 import { StyledFullWidthField, StyledWrapper } from "./personal-info.styles";
 import { FormPhoneInput } from "@/components/form";
 import { StyledTypography } from "@/components/ui/typography.styles";
-import { StyledFieldGroup, StyledSection } from "../index.styles";
+import { StyledFieldGroup, StyledSection } from "../shared.styles";
 
 export default function PersonalInfoStep() {
   const { t } = useT();

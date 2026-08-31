@@ -12,7 +12,7 @@ import {
   StyledResultsList,
   StyledResultsMessage,
   StyledResultsSkeletons
-} from "./index.styles";
+} from "./about-results.styles";
 
 const SKELETON_HEIGHT = 68;
 const SKELETON_WIDTH = 160;

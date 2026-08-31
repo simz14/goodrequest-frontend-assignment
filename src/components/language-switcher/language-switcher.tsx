@@ -2,7 +2,10 @@
 
 import { useChangeLanguage, useT } from "next-i18next/client";
 import { languages } from "@/lib/i18n/languages";
-import { StyledLanguageButton, StyledLanguageSwitcher } from "./index.styles";
+import {
+  StyledLanguageButton,
+  StyledLanguageSwitcher
+} from "./language-switcher.styles";
 
 export default function LanguageSwitcher() {
   const { t, i18n } = useT();

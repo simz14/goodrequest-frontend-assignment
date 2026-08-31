@@ -10,19 +10,18 @@ import { useMemo } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import type { FormValues } from "../schema";
 import { DonationType } from "../types";
+import { StyledFieldGroup, StyledSection } from "../shared.styles";
 import {
   StyledAmountBlock,
   StyledAmountField,
   StyledAmountOptions,
   StyledCurrency,
-  StyledFieldGroup,
   StyledFormSection,
   StyledGroup,
   StyledOptionalLabel,
   StyledRadioCard,
-  StyledSection,
   StyledSelectField
-} from "../index.styles";
+} from "./choose-shelter.styles";
 import { StyledTypography } from "@/components/ui/typography.styles";
 import { sheltersQueryOptions } from "@/lib/api/shelters";
 
