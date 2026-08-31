@@ -2,6 +2,8 @@
 
 import styled from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 const CONTENT_MAX_WIDTH = "1120px";
 
 export const AboutMain = styled.main`
@@ -21,7 +23,7 @@ export const AboutContent = styled.article`
   margin-inline: auto;
   padding-block: 40px;
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     gap: 24px;
     padding-block: 24px;
   }

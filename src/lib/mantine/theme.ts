@@ -35,8 +35,15 @@ const INVERSE_CONTENT_PRIMARY = "#fafafa";
 
 const FONT_FAMILY = "var(--font-inter), Arial, Helvetica, sans-serif";
 
+export const breakpoints = {
+  xs: "30em",
+  sm: "48em",
+  md: "64em"
+} as const;
+
 export const theme = createTheme({
   colors: { brand, gray },
+  breakpoints,
   fontFamily: FONT_FAMILY,
   fontFamilyMonospace: FONT_FAMILY,
   headings: { fontFamily: FONT_FAMILY },
@@ -44,6 +51,12 @@ export const theme = createTheme({
   primaryShade: { light: 6, dark: 5 },
   defaultRadius: "md"
 });
+
+export const media = {
+  xs: `@media (max-width: ${breakpoints.xs})`,
+  sm: `@media (max-width: ${breakpoints.sm})`,
+  md: `@media (max-width: ${breakpoints.md})`
+} as const;
 
 export const cssVariablesResolver: CSSVariablesResolver = () => ({
   variables: {

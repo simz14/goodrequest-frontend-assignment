@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import { filledInputSkin } from "@/components/form/form-field.styles";
 
+import { media } from "@/lib/mantine/theme";
+
 export const StyledRadioCard = styled(RadioCard)`
   padding: 16px 8px;
   text-align: center;
@@ -86,7 +88,7 @@ export const StyledAmountField = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     --amount-fz: 48px;
     --amount-currency-fz: 24px;
     --amount-section-width: 80px;
@@ -151,7 +153,7 @@ export const StyledAmountOptions = styled.div`
     background-color: var(--mantine-color-brand-7);
   }
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 

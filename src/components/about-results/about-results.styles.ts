@@ -2,12 +2,14 @@
 
 import styled, { css } from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 const resultsGrid = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     grid-template-columns: 1fr;
   }
 `;

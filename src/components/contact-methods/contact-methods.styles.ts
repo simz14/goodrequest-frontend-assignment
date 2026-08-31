@@ -3,6 +3,8 @@
 import styled from "styled-components";
 import { StyledTypography } from "@/components/ui/typography.styles";
 
+import { media } from "@/lib/mantine/theme";
+
 const ICON_BOX_SIZE = "48px";
 
 export const StyledContactMethods = styled.ul`
@@ -11,7 +13,7 @@ export const StyledContactMethods = styled.ul`
   gap: 40px;
   list-style: none;
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     grid-template-columns: 1fr;
     gap: 32px;
   }

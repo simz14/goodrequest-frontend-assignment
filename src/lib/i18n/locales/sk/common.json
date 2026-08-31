@@ -151,8 +151,7 @@
     "methods": {
       "email": {
         "title": "Email",
-        "description": "Náš tím Vám rád pomôže.",
-        "value": "hello@goodrequest.com"
+        "description": "Náš tím Vám rád pomôže."
       },
       "office": {
         "title": "Kancelária",
@@ -161,8 +160,7 @@
       },
       "phone": {
         "title": "Telefón",
-        "description": "Po-Pia od 8:00 do 17:00.",
-        "value": "+421 911 750 750"
+        "description": "Po-Pia od 8:00 do 17:00."
       }
     }
   }

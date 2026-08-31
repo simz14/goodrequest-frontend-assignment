@@ -3,6 +3,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 export const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
@@ -11,7 +13,7 @@ export const StyledFooter = styled.footer`
   padding-block: 24px;
   border-top: 1px solid var(--app-content-quintarny);
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     flex-direction: column;
     gap: 16px;
   }
@@ -26,7 +28,7 @@ export const StyledFooterActions = styled.div`
   align-items: center;
   gap: 32px;
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     flex-direction: column;
     gap: 16px;
   }
@@ -37,7 +39,7 @@ export const StyledNav = styled.nav`
   align-items: center;
   gap: 32px;
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     gap: 24px;
   }
 `;

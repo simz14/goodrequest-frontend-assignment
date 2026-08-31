@@ -151,8 +151,7 @@
     "methods": {
       "email": {
         "title": "Email",
-        "description": "Our friendly team is here to help.",
-        "value": "hello@goodrequest.com"
+        "description": "Our friendly team is here to help."
       },
       "office": {
         "title": "Office",
@@ -161,8 +160,7 @@
       },
       "phone": {
         "title": "Phone",
-        "description": "Mon-Fri from 8am to 5pm.",
-        "value": "+421 911 750 750"
+        "description": "Mon-Fri from 8am to 5pm."
       }
     }
   }

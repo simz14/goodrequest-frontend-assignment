@@ -2,6 +2,8 @@
 
 import styled from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 const FORM_COLUMN_MAX_WIDTH = "658px";
 
 export const Main = styled.main`
@@ -16,7 +18,7 @@ export const Main = styled.main`
   min-height: 0;
   padding-block: 20px;
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     grid-template-columns: 1fr;
     grid-template-rows: auto 240px auto;
     grid-template-areas:

@@ -2,6 +2,7 @@
 
 import { IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
 import { useT } from "next-i18next/client";
+import { contact, contactHrefs } from "@/lib/constants/contact";
 import {
   StyledContactDescription,
   StyledContactIcon,
@@ -14,13 +15,19 @@ import {
 const ICON_SIZE = 24;
 
 const CONTACT_METHODS = [
-  { key: "email", Icon: IconMail, href: "mailto:hello@goodrequest.com" },
   {
-    key: "office",
-    Icon: IconMapPin,
-    href: "https://maps.google.com/?q=Obchodn%C3%A1+3D,+010+08+%C5%BDilina"
+    key: "email",
+    Icon: IconMail,
+    href: contactHrefs.email,
+    value: contact.email
   },
-  { key: "phone", Icon: IconPhone, href: "tel:+421911750750" }
+  { key: "office", Icon: IconMapPin, href: contactHrefs.address, value: null },
+  {
+    key: "phone",
+    Icon: IconPhone,
+    href: contactHrefs.phone,
+    value: contact.phone
+  }
 ] as const;
 
 export default function ContactMethods() {
@@ -28,7 +35,7 @@ export default function ContactMethods() {
 
   return (
     <StyledContactMethods>
-      {CONTACT_METHODS.map(({ key, Icon, href }) => (
+      {CONTACT_METHODS.map(({ key, Icon, href, value }) => (
         <StyledContactMethod key={key}>
           <StyledContactIcon aria-hidden>
             <Icon size={ICON_SIZE} />
@@ -56,7 +63,7 @@ export default function ContactMethods() {
               rel: "noreferrer"
             })}
           >
-            {t(`contact.methods.${key}.value`)}
+            {value ?? t(`contact.methods.${key}.value`)}
           </StyledContactLink>
         </StyledContactMethod>
       ))}

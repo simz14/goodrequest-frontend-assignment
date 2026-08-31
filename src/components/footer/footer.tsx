@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useT } from "next-i18next/client";
 import LanguageSwitcher from "@/components/language-switcher";
+import { routes } from "@/lib/constants/routes";
 import {
   StyledFooter,
   StyledFooterActions,
@@ -15,8 +16,8 @@ const LOGO_HEIGHT = 24;
 const LOGO_ASPECT_RATIO = 217 / 56;
 
 const NAV_LINKS = [
-  { key: "contact", href: "/contact" },
-  { key: "about", href: "/about" }
+  { key: "contact", href: routes.contact },
+  { key: "about", href: routes.about }
 ] as const;
 
 export default function Footer() {
@@ -24,7 +25,7 @@ export default function Footer() {
 
   return (
     <StyledFooter>
-      <StyledLogoLink href="/">
+      <StyledLogoLink href={routes.home}>
         <Image
           src="/logo.svg"
           alt={t("footer.logoAlt")}

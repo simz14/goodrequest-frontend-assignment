@@ -4,8 +4,10 @@ import { getT } from "next-i18next/server";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import Footer from "@/components/footer";
 import BackLink from "@/components/back-link";
+import { routes } from "@/lib/constants/routes";
 import ContactMethods from "@/components/contact-methods";
 import { StyledTypography } from "@/components/ui/typography.styles";
+import { breakpoints } from "@/lib/mantine/theme";
 import {
   ContactContent,
   ContactFooter,
@@ -37,7 +39,7 @@ export default async function Contact() {
     <ContactMain>
       <ContactContent>
         <ContactHeader>
-          <BackLink href="/" />
+          <BackLink href={routes.home} />
           <StyledTypography $variant="heading-lg" $color="primary" as="h1">
             {t("contact.title")}
           </StyledTypography>
@@ -52,7 +54,7 @@ export default async function Contact() {
               alt={t("app.dogAlt")}
               fill
               priority
-              sizes={`(max-width: 768px) 100vw, (max-width: 1024px) calc(100vw - 160px), ${IMAGE_MAX_WIDTH}px`}
+              sizes={`(max-width: ${breakpoints.sm}) 100vw, (max-width: ${breakpoints.md}) calc(100vw - 160px), ${IMAGE_MAX_WIDTH}px`}
               style={{ objectFit: "cover" }}
               quality={100}
             />

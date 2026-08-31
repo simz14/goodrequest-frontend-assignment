@@ -3,6 +3,8 @@
 import { Stepper } from "@mantine/core";
 import styled from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 export const StyledStepper = styled(Stepper)`
   &&& {
     --stepper-icon-size: 36px;
@@ -57,7 +59,7 @@ export const StyledStepper = styled(Stepper)`
     border-radius: 999px;
   }
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     &&& {
       --stepper-icon-size: 32px;
       --stepper-fz: 0.875rem;
@@ -69,7 +71,7 @@ export const StyledStepper = styled(Stepper)`
     }
   }
 
-  @media (max-width: 480px) {
+  ${media.xs} {
     .mantine-Stepper-step:not([data-progress]) .mantine-Stepper-stepBody {
       display: none;
     }

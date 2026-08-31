@@ -2,6 +2,8 @@
 
 import styled, { css } from "styled-components";
 
+import { media } from "@/lib/mantine/theme";
+
 const CONTENT_MAX_WIDTH = "1120px";
 const CONTENT_INSET = "80px";
 const IMAGE_MIN_HEIGHT = "200px";
@@ -11,7 +13,7 @@ const contentStack = css`
   flex-direction: column;
   gap: 40px;
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     gap: 24px;
   }
 `;
@@ -31,7 +33,7 @@ export const ContactContent = styled.article`
   margin-inline: auto;
   padding-block: 40px;
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     padding-block: 24px;
   }
 `;
@@ -47,11 +49,11 @@ export const ContactInset = styled.div`
   ${contentStack}
   margin-inline: ${CONTENT_INSET};
 
-  @media (max-width: 1024px) {
+  ${media.md} {
     margin-inline: 40px;
   }
 
-  @media (max-width: 768px) {
+  ${media.sm} {
     margin-inline: 0;
   }
 `;

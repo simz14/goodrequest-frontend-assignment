@@ -6,6 +6,7 @@ import MultiStepForm from "@/components/multi-step-form";
 import Footer from "@/components/footer";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { DEFAULT_SEO_STEP, parseStepParam } from "@/lib/seo/steps";
+import { breakpoints } from "@/lib/mantine/theme";
 
 export async function generateMetadata({
   searchParams
@@ -44,7 +45,7 @@ export default async function Home() {
           alt={t("app.dogAlt")}
           fill
           priority
-          sizes="(max-width: 768px) 100vw, 40vw"
+          sizes={`(max-width: ${breakpoints.sm}) 100vw, 40vw`}
           style={{ objectFit: "cover" }}
           quality={100}
         />

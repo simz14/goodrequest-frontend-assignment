@@ -3,6 +3,7 @@ import { getT } from "next-i18next/server";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import Footer from "@/components/footer";
 import BackLink from "@/components/back-link";
+import { routes } from "@/lib/constants/routes";
 import AboutResults from "@/components/about-results";
 import { StyledTypography } from "@/components/ui/typography.styles";
 import {
@@ -32,7 +33,7 @@ export default async function About() {
     <AboutMain>
       <AboutContent>
         <AboutHeader>
-          <BackLink href="/" />
+          <BackLink href={routes.home} />
           <StyledTypography $variant="heading-lg" $color="primary" as="h1">
             {t("about.title")}
           </StyledTypography>
