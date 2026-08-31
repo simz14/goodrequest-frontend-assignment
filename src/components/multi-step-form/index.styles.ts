@@ -10,6 +10,7 @@ export const StyledStepper = styled(Stepper)`
     --stepper-outline-thickness: 1px;
     --stepper-outline-color: var(--app-content-quintarny);
     --stepper-content-padding: 40px;
+    margin-top: 40px;
   }
 
   .mantine-Stepper-stepIcon {

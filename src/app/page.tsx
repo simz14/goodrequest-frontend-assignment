@@ -46,6 +46,7 @@ export default async function Home() {
           priority
           sizes="(max-width: 768px) 100vw, 40vw"
           style={{ objectFit: "cover" }}
+          quality={100}
         />
       </ImagePanel>
     </Main>

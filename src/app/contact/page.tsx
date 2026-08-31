@@ -54,6 +54,7 @@ export default async function Contact() {
               priority
               sizes={`(max-width: 768px) 100vw, (max-width: 1024px) calc(100vw - 160px), ${IMAGE_MAX_WIDTH}px`}
               style={{ objectFit: "cover" }}
+              quality={100}
             />
           </ContactImage>
         </ContactInset>

@@ -36,6 +36,13 @@ export const FormPanel = styled.section`
   max-width: ${FORM_COLUMN_MAX_WIDTH};
   margin: 0 auto;
   width: 100%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
 `;
 
 export const FooterPanel = styled.div`

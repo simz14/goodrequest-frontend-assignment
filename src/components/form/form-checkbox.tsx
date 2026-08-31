@@ -1,8 +1,9 @@
 "use client";
 
-import { Checkbox, type CheckboxProps } from "@mantine/core";
+import type { CheckboxProps } from "@mantine/core";
 import { useT } from "next-i18next/client";
 import { useController, type FieldValues } from "react-hook-form";
+import { StyledFormCheckbox } from "./form-checkbox.styles";
 import type { ControlledFieldProps, ControlledProp } from "./types";
 
 export type FormCheckboxProps<T extends FieldValues> = ControlledFieldProps<T> &
@@ -22,7 +23,7 @@ export function FormCheckbox<T extends FieldValues>({
   const message = fieldState.error?.message;
 
   return (
-    <Checkbox
+    <StyledFormCheckbox
       {...inputProps}
       {...field}
       checked={value ?? false}

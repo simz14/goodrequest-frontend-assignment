@@ -7,14 +7,14 @@ import { StyledTypography } from "@/components/ui/typography.styles";
 export const StyledSummary = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
 `;
 
 export const StyledSummaryGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   margin: 0;
 
   &:not(:first-of-type) {
