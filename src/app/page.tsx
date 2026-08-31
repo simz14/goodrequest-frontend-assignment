@@ -1,12 +1,15 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getT } from "next-i18next/server";
+import { dehydrate, HydrationBoundary, noop } from "@tanstack/react-query";
 import { FooterPanel, FormPanel, ImagePanel, Main } from "./page.styles";
 import MultiStepForm from "@/components/multi-step-form";
 import Footer from "@/components/footer";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { DEFAULT_SEO_STEP, parseStepParam } from "@/lib/seo/steps";
 import { breakpoints } from "@/lib/mantine/theme";
+import { makeQueryClient } from "@/lib/query/client";
+import { sheltersQueryOptions } from "@/lib/api/shelters";
 
 export async function generateMetadata({
   searchParams
@@ -28,11 +31,16 @@ export async function generateMetadata({
 
 export default async function Home() {
   const { t } = await getT();
+  const queryClient = makeQueryClient();
+
+  await queryClient.query(sheltersQueryOptions()).catch(noop);
 
   return (
     <Main>
       <FormPanel>
-        <MultiStepForm />
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <MultiStepForm />
+        </HydrationBoundary>
       </FormPanel>
 
       <FooterPanel>
