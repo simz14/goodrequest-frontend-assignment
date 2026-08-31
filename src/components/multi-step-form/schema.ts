@@ -1,6 +1,8 @@
 import z from "zod";
 import { DonationType } from "./types";
 
+export const MAX_DONORS = 5;
+
 const shelterRefinement = (
   data: { donationType?: DonationType; shelter?: string },
   ctx: z.RefinementCtx
@@ -22,7 +24,7 @@ export const chooseShelterSchema = z
   })
   .superRefine(shelterRefinement);
 
-export const personalInfoSchema = z.object({
+export const donorSchema = z.object({
   firstName: z
     .string()
     .min(2, "validation.minLength")
@@ -32,10 +34,14 @@ export const personalInfoSchema = z.object({
     .min(2, "validation.minLength")
     .max(30, "validation.maxLength"),
   email: z.email("validation.email"),
-  phoneNumber: z
+  phone: z
     .string()
     .min(1, "validation.required")
     .regex(/^\+42[01]\d{9}$/, "validation.phoneNumber")
+});
+
+export const personalInfoSchema = z.object({
+  donors: z.array(donorSchema).min(1).max(MAX_DONORS)
 });
 
 export const summarySchema = z.object({
@@ -50,4 +56,12 @@ export const formSchema = z
   })
   .superRefine(shelterRefinement);
 
+export type Donor = z.infer<typeof donorSchema>;
 export type FormValues = z.infer<typeof formSchema>;
+
+export const emptyDonor: Donor = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: ""
+};

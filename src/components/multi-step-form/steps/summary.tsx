@@ -33,15 +33,7 @@ function SummaryRow({ label, value }: { label: string; value?: string }) {
 export default function SummaryStep() {
   const { t, i18n } = useT();
   const { control } = useFormContext<FormValues>();
-  const {
-    donationType,
-    shelter,
-    amount,
-    firstName,
-    lastName,
-    email,
-    phoneNumber
-  } = useWatch({ control });
+  const { donationType, shelter, amount, donors } = useWatch({ control });
 
   const { data: shelters } = useQuery(sheltersQueryOptions());
 
@@ -59,6 +51,7 @@ export default function SummaryStep() {
   }, [i18n.resolvedLanguage]);
 
   const parsedAmount = Number(amount);
+  const donorList = donors ?? [];
 
   return (
     <StyledSection>
@@ -90,17 +83,29 @@ export default function SummaryStep() {
           />
         </StyledSummaryGroup>
 
-        <StyledSummaryGroup>
-          <SummaryRow
-            label={t("summary.fields.fullName")}
-            value={[firstName, lastName].filter(Boolean).join(" ")}
-          />
-          <SummaryRow label={t("summary.fields.email")} value={email} />
-          <SummaryRow
-            label={t("summary.fields.phoneNumber")}
-            value={phoneNumber && formatPhoneNumber(phoneNumber)}
-          />
-        </StyledSummaryGroup>
+        {donorList.map(({ firstName, lastName, email, phone }, index) => (
+          <StyledSummaryGroup key={index}>
+            {donorList.length > 1 && (
+              <StyledTypography
+                $variant="text-md-semibold"
+                $color="primary"
+                as="h3"
+              >
+                {t("form.donorHeading", { number: index + 1 })}
+              </StyledTypography>
+            )}
+
+            <SummaryRow
+              label={t("summary.fields.fullName")}
+              value={[firstName, lastName].filter(Boolean).join(" ")}
+            />
+            <SummaryRow label={t("summary.fields.email")} value={email} />
+            <SummaryRow
+              label={t("summary.fields.phoneNumber")}
+              value={phone && formatPhoneNumber(phone)}
+            />
+          </StyledSummaryGroup>
+        ))}
       </StyledSummary>
 
       <FormCheckbox name="consent" label={t("form.consent")} />

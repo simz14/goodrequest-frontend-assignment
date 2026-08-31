@@ -5,19 +5,12 @@ import type { FormValues } from "./schema";
 export const toContributePayload = ({
   shelter,
   amount,
-  firstName,
-  lastName,
-  email,
-  phoneNumber
+  donors
 }: FormValues): ContributePayload => ({
-  contributors: [
-    {
-      firstName,
-      lastName,
-      email,
-      phone: formatPhoneNumber(phoneNumber)
-    }
-  ],
+  contributors: donors.map((donor) => ({
+    ...donor,
+    phone: formatPhoneNumber(donor.phone)
+  })),
   ...(shelter && { shelterID: Number(shelter) }),
   value: amount
 });

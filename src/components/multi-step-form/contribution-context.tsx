@@ -17,7 +17,7 @@ import { contributeMutationOptions } from "@/lib/api/contribute";
 import { resultsQueryOptions } from "@/lib/api/results";
 import { useNotify } from "@/lib/notifications/use-notify";
 import { toContributePayload } from "./payload";
-import { formSchema, type FormValues } from "./schema";
+import { emptyDonor, formSchema, type FormValues } from "./schema";
 import { steps } from "./steps";
 import { DonationType } from "./types";
 
@@ -66,10 +66,7 @@ export function ContributionProvider({ children }: { children: ReactNode }) {
       donationType: DonationType.FOUNDATION,
       amount: undefined,
       shelter: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
+      donors: [emptyDonor],
       consent: false
     }
   });
@@ -115,7 +112,10 @@ export function ContributionProvider({ children }: { children: ReactNode }) {
 
   const submit = useMemo(
     () =>
-      handleSubmit((values: FormValues) => mutate(toContributePayload(values))),
+      handleSubmit((values: FormValues) => {
+        const payload = toContributePayload(values);
+        mutate(payload);
+      }),
     [handleSubmit, mutate]
   );
 
